@@ -75,7 +75,7 @@ Clone this repository to your desired folder:
 
 - Navigate to the location of the folder in your machine:
 
-you@your-Pc-name:~$ cd Climate-App
+you@your-Pc-name:~$ cd torre-technical-test
 
 ### Install
 
