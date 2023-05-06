@@ -152,8 +152,6 @@ I would like to thank the entire Torre team and my special gratitude goes to Ren
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
 - **Can I test the functionality of the app**
 
   - Yes, please. Constructive feedbacks are what I enjoy most after my love for good food.
