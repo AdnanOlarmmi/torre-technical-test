@@ -140,17 +140,13 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project please give it a Start ⭐️, and you might as well consider following me on my social media presences above let's connect.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank the entire Torre team and my special gratitude goes to Renan Peixoto da Silva (Head of Engineering at Torre), for giving me the opportunity to prove myself. You are the best guys 😘
+I would like to thank the entire Torre team and my special gratitude goes to Renan Peixoto da Silva (Head of Engineering at Torre), for giving me the opportunity to prove myself. You are the best, guys 😘
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
