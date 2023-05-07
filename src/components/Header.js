@@ -3,12 +3,23 @@ import Biopage from '../pages/Biopage';
 
 function Header() {
   const [input, setInput] = useState('');
-  const [bio, setBio] = useState([]);
+  const defaultBio = {
+    userBio: {
+      person: {
+        name: 'unknown',
+        picture: 'https://example.com/default-picture.jpg',
+      },
+      strengths: [],
+    },
+  };
+  const [bio, setBio] = useState(defaultBio);
 
-  const getUserBio = async (username) => {
+  const getUserBio = async (username = 'olarmmi') => {
     const response = await fetch(`http://localhost:8000/bios/${username}`);
     const data = await response.json();
-    setBio(data);
+    setBio({
+      userBio: data,
+    });
   };
 
   return (
@@ -26,7 +37,7 @@ function Header() {
           placeholder="Search..."
         />
       </form>
-      <Biopage userBio={bio} />
+      <Biopage person={bio.userBio.person} strengths={bio.userBio.strengths} />
     </div>
   );
 }

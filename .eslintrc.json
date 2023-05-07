@@ -19,6 +19,8 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "no-shadow": "off",
+      "react/require-default-props": "off",
+      "react/default-props-match-prop-types": "off",
       "import/no-extraneous-dependencies": [
         "error",
         {
