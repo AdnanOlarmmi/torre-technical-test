@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 const Biopage = ({ strengths, person }) => {
   const { name, picture } = person;
-  console.log(name, picture);
-  console.log(strengths);
-  const ll = 'll';
-  console.log(ll);
   const proficiencyLevels = ['master', 'expert', 'proficient', 'beginner', 'no-experience-interested'];
   const skillbyProficiency = (proficiencylevel) => {
     const skills = strengths.filter((strength) => strength.proficiency === proficiencylevel);
@@ -24,8 +20,6 @@ const Biopage = ({ strengths, person }) => {
       </ul>
     );
   };
-
-  console.log(skillbyProficiency('expert'));
   return (
     <div>
       <h1>{name}</h1>
