@@ -27,4 +27,24 @@
   color: var(--custom-color);
   font-weight: 400;
   font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.skillheader {
+  text-transform: capitalize;
+}
+
+.skillsContainer {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  gap: 1rem;
+}
+
+.skillsContainer li {
+  padding: 0.5rem;
+  border-radius: 2rem;
+  background-color: #595d66;
+  width: fit-content;
 }

@@ -6,4 +6,5 @@
 
 .hamburger {
   cursor: pointer;
+  color: var(--custom-color);
 }

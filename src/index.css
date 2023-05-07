@@ -9,19 +9,18 @@
 html,
 body {
   margin: 0;
-  background-color: #27292d;
 }
 
 body {
   font-family: 'Mulish', 'Helvetica', sans-serif;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .content {
   width: 367px;
-  border: 2px solid red;
+  padding: 1rem;
+  background-color: #27292d;
 }
 
 ul {
@@ -32,4 +31,5 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+  text-align: left;
 }
