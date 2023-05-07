@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import SkillsInfo from './SkillsInfo';
 
 const Biopage = ({ strengths, person }) => {
+  const [skillName, setSkillName] = useState('');
+  const newStrength = strengths.filter((strength) => strength.name === skillName);
   const handleFaviconChange = (newPath) => {
     const favicon = document.querySelector('link[rel="icon"]');
     favicon.href = newPath;
@@ -13,16 +16,27 @@ const Biopage = ({ strengths, person }) => {
     const skills = strengths.filter((strength) => strength.proficiency === proficiencylevel);
     if (skills.length === 0) return null;
     return (
-      <ul>
-        <h2>{proficiencylevel.replace(/-/g, ' ')}</h2>
-        {skills.map((skill) => (
-          <li key={skill.id}>
-            {skill.name}
-            {' '}
-            {skill.weight || ''}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <ul>
+          <h2>{proficiencylevel.replace(/-/g, ' ')}</h2>
+          {skills.map((skill) => (
+            <li key={skill.id}>
+              <button
+                type="button"
+                onClick={() => {
+                  setSkillName(skill.name);
+                }}
+              >
+                {skill.name}
+                {' '}
+                {skill.weight || ''}
+              </button>
+            </li>
+          ))}
+        </ul>
+        <SkillsInfo skill={newStrength} />
+      </div>
+
     );
   };
   return (
