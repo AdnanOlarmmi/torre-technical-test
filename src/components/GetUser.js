@@ -16,7 +16,7 @@ function GetUser() {
   const [bio, setBio] = useState(defaultBio);
 
   const getUserBio = async (username = 'olarmmi') => {
-    const response = await fetch(`http://localhost:8000/bios/${username}`);
+    const response = await fetch(`https://beautiful-rolypoly-4cfe0d.netlify.app/bios/${username}`);
     const data = await response.json();
     setBio({
       userBio: data,
