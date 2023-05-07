@@ -4,7 +4,7 @@ import SkillsInfo from './SkillsInfo';
 
 const Biopage = ({ strengths, person }) => {
   const [skillName, setSkillName] = useState('');
-  const newStrength = strengths.filter((strength) => strength.name === skillName);
+  const newStrength = strengths.filter((strength) => strength.name === skillName) || [{}];
   const handleFaviconChange = (newPath) => {
     const favicon = document.querySelector('link[rel="icon"]');
     favicon.href = newPath;
@@ -34,7 +34,6 @@ const Biopage = ({ strengths, person }) => {
             </li>
           ))}
         </ul>
-        <SkillsInfo skill={newStrength} />
       </div>
 
     );
@@ -46,6 +45,7 @@ const Biopage = ({ strengths, person }) => {
       <section>
         {proficiencyLevels.map((proficiencyLevels) => skillbyProficiency(proficiencyLevels))}
       </section>
+      <SkillsInfo newStrength={newStrength} />
     </div>
   );
 };

@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SkillsInfo = ({ skill }) => {
-  console.log('skilssinfo');
-  return (
-    <div>SkillsInfo</div>
-  );
+const SkillsInfo = ({ newStrength }) => {
+  if (newStrength.length) {
+    const skill = newStrength[0];
+    return (
+      <div>
+        { skill.name }
+        { skill.proficiency }
+        { skill.recommendations }
+      </div>
+    );
+  }
+  return null;
 };
 
 SkillsInfo.propTypes = {
-  strengths: PropTypes.arrayOf(
+  newStrength: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       code: PropTypes.number.isRequired,
@@ -23,6 +30,6 @@ SkillsInfo.propTypes = {
       hits: PropTypes.number.isRequired,
     }),
   ).isRequired,
-}
+};
 
 export default SkillsInfo;
