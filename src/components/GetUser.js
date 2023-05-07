@@ -16,7 +16,7 @@ function GetUser() {
   const [bio, setBio] = useState(defaultBio);
 
   const getUserBio = async (username = 'olarmmi') => {
-    const response = await fetch(`https://torre.bio/api/bios/${username}`);
+    const response = await fetch(`https://crossorigin.me/https://torre.bio/api/bios/${username}`);
     const data = await response.json();
     setBio({
       userBio: data,
