@@ -1,0 +1,13 @@
+.skillInfo {
+  margin-top: 20px;
+  position: absolute;
+  height: 22px;
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #27292d;
+}
+
+.skillInfo .header {
+  height: 2rem;
+}

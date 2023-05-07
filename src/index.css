@@ -21,6 +21,7 @@ body {
   width: 367px;
   padding: 1rem;
   background-color: #27292d;
+  position: relative;
 }
 
 ul {
