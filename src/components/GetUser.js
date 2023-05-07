@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Biopage from '../pages/Biopage';
+import '../styles/Header.css';
 
 function GetUser() {
   const [input, setInput] = useState('');
@@ -24,19 +25,23 @@ function GetUser() {
 
   return (
     <div>
-      <h1>Header</h1>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        getUserBio(input);
-      }}
-      >
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          type="text"
-          placeholder="Search..."
-        />
-      </form>
+      <div className="header">
+        <span className="material-symbols-outlined hamburger">
+          menu
+        </span>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          getUserBio(input);
+        }}
+        >
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            type="text"
+            placeholder="Search..."
+          />
+        </form>
+      </div>
       <Biopage person={bio.userBio.person} strengths={bio.userBio.strengths} />
     </div>
   );

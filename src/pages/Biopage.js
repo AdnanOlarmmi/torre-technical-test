@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SkillsInfo from './SkillsInfo';
+import '../styles/Biopage.css';
 
 const Biopage = ({ strengths, person }) => {
   const [skillName, setSkillName] = useState('');
@@ -16,9 +17,9 @@ const Biopage = ({ strengths, person }) => {
     const skills = strengths.filter((strength) => strength.proficiency === proficiencylevel);
     if (skills.length === 0) return null;
     return (
-      <div>
-        <ul>
-          <h2>{proficiencylevel.replace(/-/g, ' ')}</h2>
+      <div className="skillsWrapper">
+        <ul className="skillsContainer">
+          <h4 className="skillheader">{proficiencylevel.replace(/-/g, ' ')}</h4>
           {skills.map((skill) => (
             <li key={skill.id}>
               <button
@@ -39,9 +40,12 @@ const Biopage = ({ strengths, person }) => {
     );
   };
   return (
-    <div>
-      <h1>{name}</h1>
-      <img src={picture} alt={name} />
+    <div className="bioContainer">
+      <div className="image-container">
+        <img src={picture} alt={name} />
+      </div>
+      <h3 className="userName">{name}</h3>
+      <p>Skills and interests:</p>
       <section>
         {proficiencyLevels.map((proficiencyLevels) => skillbyProficiency(proficiencyLevels))}
       </section>
