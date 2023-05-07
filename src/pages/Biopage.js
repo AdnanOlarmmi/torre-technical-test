@@ -10,9 +10,10 @@ const Biopage = ({ strengths, person }) => {
   const proficiencyLevels = ['master', 'expert', 'proficient', 'beginner', 'no-experience-interested'];
   const skillbyProficiency = (proficiencylevel) => {
     const skills = strengths.filter((strength) => strength.proficiency === proficiencylevel);
+    if (skills.length === 0) return null;
     return (
       <ul>
-        <h2>{proficiencylevel}</h2>
+        <h2>{proficiencylevel.replace(/-/g, ' ')}</h2>
         {skills.map((skill) => (
           <li key={skill.id}>
             {skill.name}
