@@ -7,7 +7,7 @@ const SkillsInfo = ({ newStrength }) => {
     return (
       <div>
         { skill.name }
-        { skill.proficiency }
+        { skill.proficiency.replace(/-/g, ' ') }
         { skill.recommendations }
       </div>
     );
