@@ -3,10 +3,7 @@ import GetUser from './GetUser';
 import '../styles/Header.css';
 
 const Header = () => (
-  <div className="header">
-    <span className="material-symbols-outlined">
-      menu
-    </span>
+  <div>
     <GetUser />
   </div>
 );

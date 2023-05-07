@@ -24,18 +24,23 @@ function GetUser() {
 
   return (
     <div>
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        getUserBio(input);
-      }}
-      >
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          type="text"
-          placeholder="Search..."
-        />
-      </form>
+      <div className="header">
+        <span className="material-symbols-outlined hamburger">
+          menu
+        </span>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          getUserBio(input);
+        }}
+        >
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            type="text"
+            placeholder="Search..."
+          />
+        </form>
+      </div>
       <Biopage person={bio.userBio.person} strengths={bio.userBio.strengths} />
     </div>
   );
