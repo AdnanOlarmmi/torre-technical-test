@@ -24,7 +24,6 @@ function GetUser() {
 
   return (
     <div>
-      <h1>Header</h1>
       <form onSubmit={(e) => {
         e.preventDefault();
         getUserBio(input);
