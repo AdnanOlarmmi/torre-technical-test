@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Biopage from '../pages/Biopage';
+import '../styles/Header.css';
 
 function GetUser() {
   const [input, setInput] = useState('');
