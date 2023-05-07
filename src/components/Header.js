@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Biopage from '../pages/Biopage';
 
 function Header() {
@@ -11,24 +11,22 @@ function Header() {
     setBio(data);
   };
 
-  useEffect(() => {
-    getUserBio(input);
-  }, [input]);
-
   return (
     <div>
       <h1>Header</h1>
-      <form>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        getUserBio(input);
+      }}
+      >
         <input
           value={input}
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}
+          onChange={(e) => setInput(e.target.value)}
           type="text"
           placeholder="Search..."
         />
       </form>
-      <Biopage bio={bio} />
+      <Biopage userBio={bio} />
     </div>
   );
 }
