@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Biopage = ({ strengths, person }) => {
+  const handleFaviconChange = (newPath) => {
+    const favicon = document.querySelector('link[rel="icon"]');
+    favicon.href = newPath;
+  };
+  handleFaviconChange(person.picture);
   const { name, picture } = person;
   const proficiencyLevels = ['master', 'expert', 'proficient', 'beginner', 'no-experience-interested'];
   const skillbyProficiency = (proficiencylevel) => {
