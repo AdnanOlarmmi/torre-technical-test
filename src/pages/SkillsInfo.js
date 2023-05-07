@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/SkillsInfo.css';
 
 const SkillsInfo = ({ newStrength }) => {
   if (newStrength.length) {
     const skill = newStrength[0];
     return (
-      <div>
-        { skill.name }
-        { skill.proficiency.replace(/-/g, ' ') }
-        { skill.recommendations }
+      <div className="skillInfo">
+        <div className="header">
+          { skill.name }
+        </div>
+        <div>
+          Proficiency:
+          { skill.proficiency.replace(/-/g, ' ') }
+          <br />
+          Recommendations:
+          { skill.recommendations }
+        </div>
+
       </div>
     );
   }
