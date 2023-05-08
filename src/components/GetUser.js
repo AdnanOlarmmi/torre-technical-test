@@ -15,8 +15,8 @@ function GetUser() {
   };
   const [bio, setBio] = useState(defaultBio);
 
-  const getUserBio = async (username) => {
-    const response = await fetch(`https://enchanting-melba-5fb712.netlify.app/.netlify/functions/server/bios/${username}`);
+  const getUserBio = async (username = 'olarmmi') => {
+    const response = await fetch(`http://localhost:8080/bios/${username}`);
     const data = await response.json();
     setBio({
       userBio: data,

@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './components/Header';
+import GetUser from './components/GetUser';
 
 function App() {
   return (
     <div className="content">
-      <Header />
+      <GetUser />
     </div>
   );
 }
