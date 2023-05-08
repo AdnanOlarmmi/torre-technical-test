@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import getUserBio from '../api/getUserBio';
+import '../styles/Header.css';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -18,16 +19,13 @@ const Header = () => {
   };
   return (
     <header>
-      <span className="material-symbols-outlined hamburger">
+      <span className="material-symbols-outlined header__hamburger btn--white--pointer">
         menu
       </span>
-      <h4>
+      <h4 className="header__logo btn--white--pointer">
         torre
         <span>.co</span>
       </h4>
-      <span className="material-symbols-outlined">
-        search
-      </span>
       <form onSubmit={handleSubmit}>
         <input
           value={username}
@@ -36,7 +34,10 @@ const Header = () => {
           }}
         />
       </form>
-      <p>SIGN IN</p>
+      <span className="material-symbols-outlined header__search btn--white--pointer">
+        search
+      </span>
+      <p className="header__signin btn--white--pointer">SIGN IN</p>
     </header>
   );
 };

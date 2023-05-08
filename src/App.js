@@ -4,7 +4,7 @@ import Biopage from './pages/Biopage';
 
 function App() {
   return (
-    <div>
+    <div className="content">
       <Header />
       <Biopage />
     </div>
