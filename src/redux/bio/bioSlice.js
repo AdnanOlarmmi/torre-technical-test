@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import getUserBio from '../../api/getUserBio';
 
 const initialState = {
-  bio: { data: '' },
+  bio: { person: { name: 'Torre Bio', picture: 'https://torre.co/favicon.png' }, strengths: [] },
   status: 'idle',
   error: null,
 };
