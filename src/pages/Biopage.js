@@ -10,7 +10,13 @@ const Biopage = () => {
   if (bio?.person?.name) {
     const skills = skillsArranged(bio.strengths, proficiencyLevels);
     console.log(skills);
-    return (<div>{ bio.person.name }</div>);
+    return (
+      <div>
+        { bio.person.name }
+        <img src={bio.person.picture} alt={bio.person.name} />
+        {skillsArranged(bio.strengths, proficiencyLevels)}
+      </div>
+    );
   } return null;
 };
 
