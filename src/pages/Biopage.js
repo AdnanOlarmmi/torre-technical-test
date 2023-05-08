@@ -1,26 +1,17 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import skillsArranged from '../helperFxns/skillsArranged';
 
 const Biopage = () => {
-  const dispatch = useDispatch();
+  const proficiencyLevels = ['master', 'expert', 'proficient', 'beginner', 'no-experience-interested'];
   const state = useSelector((state) => state);
-  const { status } = state;
-  useEffect(() => {
-    if (status === 'succeeded') {
-      const fullBio = state.bio;
-      if (fullBio?.person?.name) {
-        const newBio = {
-          person: {
-            name: fullBio.person.name,
-            picture: fullBio.person.picture,
-          },
-          strengths: fullBio.strengths,
-        };
-        return (<div>{newBio}</div>);
-      }
-    }
-    return null;
-  }, [status, dispatch]);
+  const { bio } = state;
+  console.log(bio);
+  if (bio?.person?.name) {
+    const skills = skillsArranged(bio.strengths, proficiencyLevels);
+    console.log(skills);
+    return (<div>{ bio.person.name }</div>);
+  } return null;
 };
 
 export default Biopage;
