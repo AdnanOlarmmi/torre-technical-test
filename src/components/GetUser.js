@@ -7,8 +7,8 @@ function GetUser() {
   const defaultBio = {
     userBio: {
       person: {
-        name: 'unknown',
-        picture: 'https://example.com/default-picture.jpg',
+        name: 'Torre Bio',
+        picture: 'https://torre.co/favicon.png',
       },
       strengths: [],
     },
