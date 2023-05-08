@@ -22,7 +22,7 @@ const Header = () => {
     setSearchActive(true);
     searchIconRef.current.classList.add('hide');
     formRef.current.classList.remove('hide');
-    formRef.current.focus();
+    formRef.current.querySelector('input').focus();
   };
 
   const handleClickOutside = (event) => {

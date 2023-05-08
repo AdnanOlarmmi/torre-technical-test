@@ -11,9 +11,14 @@ const Biopage = () => {
     handleFaviconChange(bio.person.picture);
     return (
       <div>
-        { bio.person.name }
-        <img src={bio.person.picture} alt={bio.person.name} />
-        {skillsArranged(bio.strengths, proficiencyLevels)}
+        <div className="bio__container">
+          <img src={bio.person.picture} alt={bio.person.name} />
+        </div>
+        <h3 className="bio__username">{ bio.person.name }</h3>
+        <p>Skills and Interests</p>
+        <section>
+          {skillsArranged(bio.strengths, proficiencyLevels)}
+        </section>
       </div>
     );
   } return null;
