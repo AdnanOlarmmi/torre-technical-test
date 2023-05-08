@@ -1,12 +1,10 @@
 import React from 'react';
-import GetUser from './components/GetUser';
-import Form from './components/Form';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div className="content">
-      <Form />
-      <GetUser />
+    <div>
+      <Header />
     </div>
   );
 }
