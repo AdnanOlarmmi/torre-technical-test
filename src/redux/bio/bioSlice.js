@@ -18,7 +18,6 @@ const bioSlice = createSlice({
       .addCase(getUserBio.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.bio = action.payload;
-        console.log(action.payload);
       })
       .addCase(getUserBio.rejected, (state, action) => {
         state.status = 'failed';
