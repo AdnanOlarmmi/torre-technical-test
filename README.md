@@ -48,7 +48,7 @@ The project is a technical testing for a full-stack software engineering positio
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](soon)
+- [Live Demo Link](https://cheerful-maamoul-ba5e46.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
