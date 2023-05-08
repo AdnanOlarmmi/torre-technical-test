@@ -2,16 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import getUserBio from '../../api/getUserBio';
 
 const initialState = {
-  bio: {},
+  bio: { data: '' },
   status: 'idle',
   error: null,
 };
 
 const bioSlice = createSlice({
   name: 'bio',
-
   initialState,
-
   extraReducers: (builder) => {
     builder
       .addCase(getUserBio.pending, (state) => {
@@ -20,6 +18,7 @@ const bioSlice = createSlice({
       .addCase(getUserBio.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.bio = action.payload;
+        console.log(action.payload);
       })
       .addCase(getUserBio.rejected, (state, action) => {
         state.status = 'failed';

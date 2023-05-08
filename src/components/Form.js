@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import getUserBio from '../api/getUserBio';
 
 const Form = () => {
   const [username, setUsername] = useState('');
   console.log('lsd');
+  const userBio = useSelector((state) => state.bio);
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: 'ADD_USER', payload: username });
+    dispatch(getUserBio(username));
+    console.log(username);
+    console.log(userBio);
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
