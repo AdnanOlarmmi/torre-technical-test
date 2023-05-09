@@ -1,27 +1,20 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { imagePath } from '../helperFxns/skillsArranged';
 import '../styles/SkillsInfo.css';
 import '../styles/Header.css';
 
-const SkillsInfo = ({ newSkill }) => {
-  const closeBtn = useRef(null);
-  const skillsInfo = useRef(null);
-  const closeSkillsInfo = () => {
-    skillsInfo.current.classList.add('now');
-  };
+const SkillsInfo = ({ newSkill, reset }) => {
   if (newSkill?.name) {
     return (
       <div
         className="skills__info-container"
-        ref={skillsInfo}
       >
         <div className="skills__info-heading">
           <button
             type="button"
             className="material-symbols-outlined"
-            ref={closeBtn}
-            onClick={closeSkillsInfo}
+            onClick={reset}
           >
             close
           </button>
@@ -66,6 +59,7 @@ SkillsInfo.propTypes = {
     weight: PropTypes.number.isRequired,
     recommendations: PropTypes.number.isRequired,
   }).isRequired,
+  reset: PropTypes.func.isRequired,
 };
 
 export default SkillsInfo;

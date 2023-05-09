@@ -19,12 +19,15 @@ body {
   font-family: 'Mulish', 'Helvetica', sans-serif;
   display: flex;
   justify-content: center;
+  padding: 1rem 0;
 }
 
 .content {
   width: 367px;
   background-color: #27292d;
   min-height: 100vh;
+  box-shadow: -4px 4px rgba(56, 59, 64, 0.7), 2px 2px 6px rgba(1, 1, 1, 0.4);
+  border-radius: 8px;
 }
 
 ul {

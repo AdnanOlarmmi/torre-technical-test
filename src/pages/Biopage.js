@@ -8,7 +8,9 @@ import '../styles/Biopage.css';
 const Biopage = () => {
   const proficiencyLevels = ['master', 'expert', 'proficient', 'beginner', 'no-experience-interested'];
   const state = useSelector((state) => state);
-  const [newSkill, setNewSkill] = useState('null');
+  const [newSkill, setNewSkill] = useState(null);
+  const [showInfo, setShowInfo] = useState(false);
+  const reset = () => setShowInfo(false);
   const { bio } = state;
   if (bio?.person?.name) {
     handleFaviconChange(bio.person.picture);
@@ -25,10 +27,11 @@ const Biopage = () => {
             proficiencyLevels,
             onClick: (skill) => {
               setNewSkill(skill);
+              setShowInfo(true);
             },
           })}
         </section>
-        <SkillsInfo newSkill={newSkill} />
+        {showInfo && <SkillsInfo newSkill={newSkill} showSkillInfo={showInfo} reset={reset} />}
       </div>
     );
   } return <p />;
