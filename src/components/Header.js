@@ -41,6 +41,7 @@ const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getUserBio(username));
+    setUsername('');
     setSearchActive(false);
     searchIconRef.current.classList.remove('hide');
     formRef.current.classList.add('hide');
