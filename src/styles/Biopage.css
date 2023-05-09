@@ -1,5 +1,6 @@
 .bio__container {
   padding: 1rem;
+  position: relative;
 }
 
 .bio__container * {

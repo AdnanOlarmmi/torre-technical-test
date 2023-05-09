@@ -16,6 +16,7 @@ const Biopage = () => {
     handleFaviconChange(bio.person.picture);
     return (
       <div className="bio__container">
+        {showInfo && <SkillsInfo newSkill={newSkill} showSkillInfo={showInfo} reset={reset} />}
         <div className="bio__image-container">
           <img src={bio.person.picture} alt={bio.person.name} />
         </div>
@@ -31,7 +32,6 @@ const Biopage = () => {
             },
           })}
         </section>
-        {showInfo && <SkillsInfo newSkill={newSkill} showSkillInfo={showInfo} reset={reset} />}
       </div>
     );
   } return <p />;
