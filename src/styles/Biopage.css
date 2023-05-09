@@ -1,5 +1,5 @@
-:root {
-  --custom-color: #f9f9f9;
+.bio__container {
+  padding: 1rem;
 }
 
 .bio__container * {
@@ -30,10 +30,6 @@
   margin-bottom: 2rem;
 }
 
-.bio__skillheader {
-  text-transform: capitalize;
-}
-
 .bio__skills-container {
   list-style: none;
   display: flex;
@@ -44,7 +40,47 @@
 
 .bio__skills-container li {
   padding: 0.5rem;
-  border-radius: 2rem;
-  background-color: #595d66;
+  border-radius: 1.2rem;
+  background-color: #4a4e55;
   width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.bio__skills-container li:hover {
+  background-color: #434343;
+  color: #fff;
+}
+
+.bio__heading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.bio-skills__image {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.bio__skillheader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.bio__skillheader-img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.bio__skillheader-text {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
 }
