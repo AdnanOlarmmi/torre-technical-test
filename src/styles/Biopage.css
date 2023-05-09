@@ -1,13 +1,13 @@
-:root {
-  --custom-color: #f9f9f9;
+.bio__container {
+  padding: 1rem;
 }
 
-.bioContainer * {
+.bio__container * {
   color: var(--custom-color);
   width: 100%;
 }
 
-.image-container {
+.bio__image-container {
   display: block;
   width: 100px;
   height: 100px;
@@ -15,14 +15,14 @@
   margin: 1rem auto;
 }
 
-.image-container img {
+.bio__image-container img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.userName {
+.bio__username {
   text-align: center;
   color: var(--custom-color);
   font-weight: 400;
@@ -30,21 +30,57 @@
   margin-bottom: 2rem;
 }
 
-.skillheader {
-  text-transform: capitalize;
-}
-
-.skillsContainer {
+.bio__skills-container {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem 0;
   gap: 1rem;
+  margin-bottom: 3rem;
 }
 
-.skillsContainer li {
+.bio__skills-container li {
   padding: 0.5rem;
-  border-radius: 2rem;
-  background-color: #595d66;
+  border-radius: 1.2rem;
+  background-color: #4a4e55;
   width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.bio__skills-container li:hover {
+  background-color: #434343;
+  color: #fff;
+}
+
+.bio__heading {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.bio-skills__image {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.bio__skillheader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.bio__skillheader-img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  margin-right: 0.5rem;
+}
+
+.bio__skillheader-text {
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: capitalize;
 }

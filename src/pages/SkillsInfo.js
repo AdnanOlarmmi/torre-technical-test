@@ -1,39 +1,71 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
+import { imagePath } from '../helperFxns/skillsArranged';
 import '../styles/SkillsInfo.css';
+import '../styles/Header.css';
 
-const SkillsInfo = ({ newStrength }) => {
-  if (newStrength.length) {
-    const skill = newStrength[0];
+const SkillsInfo = ({ newSkill }) => {
+  const closeBtn = useRef(null);
+  const skillsInfo = useRef(null);
+  const closeSkillsInfo = () => {
+    skillsInfo.current.classList.add('now');
+  };
+  if (newSkill?.name) {
     return (
-      <div className="skillInfo">
-        <div className="header">
-          { skill.name }
+      <div
+        className="skills__info-container"
+        ref={skillsInfo}
+      >
+        <div className="skills__info-heading">
+          <button
+            type="button"
+            className="material-symbols-outlined"
+            ref={closeBtn}
+            onClick={closeSkillsInfo}
+          >
+            close
+          </button>
+          <h3>
+            {newSkill.name}
+          </h3>
         </div>
-        <div>
-          Proficiency:
-          { skill.proficiency.replace(/-/g, ' ') }
-          <br />
-          Recommendations:
-          { skill.recommendations }
-        </div>
+        <div className="skills__info-prof-cont">
 
+          <div className="skills__info-proficiency">
+            <p className="skills__info-prof-title">Proficiency:</p>
+            <img src={imagePath(newSkill.proficiency)} alt={newSkill.name} />
+            <p
+              className="skills__info-prof-level"
+            >
+              {newSkill.proficiency}
+            </p>
+          </div>
+        </div>
+        <p className="skills__info-weight">
+          Weight:
+          {' '}
+          <span>
+            {newSkill.weight}
+          </span>
+        </p>
+        <p className="skills__info-recommendations">
+          Recommendations:
+          {' '}
+          <span>{newSkill.recommendations}</span>
+        </p>
       </div>
     );
-  }
-  return null;
+  } return <p />;
 };
 
 SkillsInfo.propTypes = {
-  newStrength: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      proficiency: PropTypes.string.isRequired,
-      weight: PropTypes.number.isRequired,
-      recommendations: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
+  newSkill: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    proficiency: PropTypes.string.isRequired,
+    weight: PropTypes.number.isRequired,
+    recommendations: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default SkillsInfo;

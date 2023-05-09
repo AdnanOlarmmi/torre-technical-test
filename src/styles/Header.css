@@ -1,13 +1,46 @@
-.header {
+header {
   display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2), 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  padding-bottom: 1rem;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
 }
 
-.hamburger {
-  cursor: pointer;
-  color: var(--custom-color);
+header form input {
+  width: 7.64rem;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  padding: 0.2rem;
+}
+
+header form input::placeholder {
+  font-size: 0.7rem;
+}
+
+.header__logo {
+  font-size: 1.5rem;
+}
+
+.header__logo span,
+.header__signin {
+  color: rgb(205, 220, 57);
+}
+
+.header__search {
+  margin-left: auto;
+}
+
+.header__hamburger {
+  margin-top: 5px;
+}
+
+.hide {
+  visibility: hidden;
+  position: absolute;
+}
+
+.show {
+  visibility: visible;
+  position: static;
 }
