@@ -17,9 +17,12 @@ const Biopage = () => {
     return (
       <div className="bio__container">
         {showInfo && <SkillsInfo newSkill={newSkill} showSkillInfo={showInfo} reset={reset} />}
-        <div className="bio__image-container">
-          <img src={bio.person.picture} alt={bio.person.name} />
+        <div className="bio__image-wrapper">
+          <div className="bio__image-container">
+            <img src={bio.person.picture} alt={bio.person.name} />
+          </div>
         </div>
+
         <h3 className="bio__username">{ bio.person.name }</h3>
         <section>
           <h4 className="bio__heading">Skills and Interests:</h4>
