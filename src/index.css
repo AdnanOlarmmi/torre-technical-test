@@ -6,6 +6,15 @@
   box-sizing: border-box;
 }
 
+a,
+a:visited,
+a:active,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   --custom-color: #f9f9f9;
 }

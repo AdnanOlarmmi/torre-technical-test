@@ -54,7 +54,7 @@ const Header = () => {
     };
   }, []);
   return (
-    <header>
+    <header id="header">
       <span className="material-symbols-outlined header__hamburger btn--white--pointer">
         menu
       </span>

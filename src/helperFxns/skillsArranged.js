@@ -43,18 +43,20 @@ const skillsArranged = (props) => {
                   key={skill.id}
                   onClick={() => onClick(skill)}
                 >
-                  {' '}
-                  <p>
-                    {skill.name}
-                  </p>
-                  {' '}
-                  {skill.weight !== 0 && (
+                  <a href="#header">
+                    {' '}
+                    <p>
+                      {skill.name}
+                    </p>
+                    {' '}
+                    {skill.weight !== 0 && (
                     <>
                       <img className="bio-skills__image" src={box} alt="null" />
                       {' '}
                       {skill.weight.toFixed(1)}
                     </>
-                  )}
+                    )}
+                  </a>
                 </li>
               ))}
             </ul>
