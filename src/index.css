@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a,
 a:visited,
 a:active,
@@ -57,4 +61,17 @@ button {
 
 .btn--white--pointer:active {
   scale: 0.93;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .content {
+    width: 100vw;
+    padding: 0;
+    border-radius: 0;
+  }
 }

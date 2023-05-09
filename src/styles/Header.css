@@ -7,7 +7,7 @@ header {
 }
 
 header form input {
-  width: 7.64rem;
+  width: 7rem;
   border: none;
   outline: none;
   border-radius: 0.2rem;
@@ -29,10 +29,18 @@ header form input::placeholder {
 
 .header__search {
   margin-left: auto;
+  display: flex;
 }
 
 .header__hamburger {
   margin-top: 5px;
+}
+
+.header__right {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 1rem;
 }
 
 .hide {

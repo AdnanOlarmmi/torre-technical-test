@@ -73,10 +73,13 @@ const Header = () => {
           />
         </form>
       </div>
-      <button type="button" ref={searchIconRef} onClick={handleClick} className="material-symbols-outlined header__search btn--white--pointer">
-        search
-      </button>
-      <span className="header__signin btn--white--pointer">SIGN IN</span>
+      <div className="header__right">
+        <button type="button" ref={searchIconRef} onClick={handleClick} className="material-symbols-outlined header__search btn--white--pointer">
+          search
+        </button>
+        <span className="header__signin btn--white--pointer">SIGN IN</span>
+      </div>
+
     </header>
   );
 };
