@@ -10,7 +10,7 @@
 
 .skills__info-heading {
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2), 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+  padding: 1rem 0;
   display: flex;
   gap: 1rem;
   align-items: center;
