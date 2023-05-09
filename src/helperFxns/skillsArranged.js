@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable */
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/Biopage.css';
 import box from '../assets/images/box.svg';
 import master from '../assets/images/master.svg';
@@ -7,9 +8,8 @@ import proficient from '../assets/images/proficient.svg';
 import beginner from '../assets/images/beginner.svg';
 import interested from '../assets/images/interested.svg';
 
-const images = [{ master }, { expert }, { proficient }, { beginner }, { interested }];
-
-const imagePath = (proficiency) => {
+export const imagePath = (proficiency) => {
+    const images = [{ master }, { expert }, { proficient }, { beginner }, { interested }];
   if (proficiency === 'no-experience-interested') return interested;
   const image = images.find((image) => image[proficiency]);
   return image[proficiency];
@@ -20,11 +20,27 @@ const skillHeader = (proficiency) => {
   return proficiency.replace(/-/g, ' ');
 };
 
-const skillsArranged = (strengths, proficiencyLevels) => {
+// const defaultSkill = {
+//     "id": "NPmYYGmM",
+//     "code": 6080236,
+//     "name": "Code review",
+//     "proficiency": "master",
+//     "weight": 0,
+//     "recommendations": 3,
+//     "media": [],
+//     "supra": false,
+//     "created": "2023-04-30T16:39:13",
+//     "hits": 170
+// }
+
+const skillsArranged = (props) => {
+    const { strengths, proficiencyLevels, onClick } = props;
   const skills = {};
   proficiencyLevels.forEach((proficiency) => {
     skills[proficiency] = strengths.filter((strength) => strength.proficiency === proficiency);
   });
+
+
   return (
     <div>
       {Object.keys(skills).map((proficiency) => {
@@ -37,16 +53,23 @@ const skillsArranged = (strengths, proficiencyLevels) => {
             </div>
             <ul className="bio__skills-container">
               {skills[proficiency].map((skill) => (
-                <li className="btn--white--pointer" key={skill.id}>
+                <li
+                  className="btn--white--pointer"
+                  key={skill.id}
+                  onClick={() => onClick(skill
+                    )}
+                >
                   {' '}
-                  {skill.name}
+                  <p>
+                    {skill.name}
+                  </p>
                   {' '}
                   {skill.weight !== 0 && (
-                  <>
-                    <img className="bio-skills__image" src={box} alt="null" />
-                    {' '}
-                    {skill.weight.toFixed}
-                  </>
+                    <>
+                      <img className="bio-skills__image" src={box} alt="null" />
+                      {' '}
+                      {skill.weight.toFixed(1)}
+                    </>
                   )}
                 </li>
               ))}
