@@ -14,7 +14,11 @@ const imagePath = (proficiency) => {
   const image = images.find((image) => image[proficiency]);
   return image[proficiency];
 };
-console.log(imagePath('master'));
+
+const skillHeader = (proficiency) => {
+  if (proficiency === 'no-experience-interested') return 'No experience, but interested';
+  return proficiency.replace(/-/g, ' ');
+};
 
 const skillsArranged = (strengths, proficiencyLevels) => {
   const skills = {};
@@ -29,7 +33,7 @@ const skillsArranged = (strengths, proficiencyLevels) => {
           <div key={skills.id}>
             <div className="bio__skillheader">
               <img className="bio__skillheader-img" src={imagePath(proficiency)} alt={proficiency} />
-              <h4 className="bio__skillheader-text">{proficiency.replace(/-/g, ' ')}</h4>
+              <h4 className="bio__skillheader-text">{skillHeader(proficiency)}</h4>
             </div>
             <ul className="bio__skills-container">
               {skills[proficiency].map((skill) => (

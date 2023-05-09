@@ -34,8 +34,8 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  margin: 1rem 0;
   gap: 1rem;
+  margin-bottom: 3rem;
 }
 
 .bio__skills-container li {
