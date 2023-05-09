@@ -45,3 +45,7 @@ button {
   color: var(--custom-color);
   cursor: pointer;
 }
+
+.btn--white--pointer:active {
+  scale: 0.93;
+}
