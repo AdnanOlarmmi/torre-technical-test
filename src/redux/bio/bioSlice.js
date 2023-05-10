@@ -5,6 +5,7 @@ const initialState = {
   bio: { person: { name: '', picture: '' }, strengths: [] },
   status: 'idle',
   error: null,
+  isLoading: false,
 };
 
 const bioSlice = createSlice({
@@ -14,14 +15,17 @@ const bioSlice = createSlice({
     builder
       .addCase(getUserBio.pending, (state) => {
         state.status = 'loading';
+        state.isLoading = true;
       })
       .addCase(getUserBio.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.bio = action.payload;
+        state.isLoading = false;
       })
       .addCase(getUserBio.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+        state.isLoading = false;
       });
   },
 });

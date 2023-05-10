@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ClipLoader } from 'react-spinners';
 import { useSelector } from 'react-redux';
 import skillsArranged from '../helperFxns/skillsArranged';
 import handleFaviconChange from '../helperFxns/handleFavicon';
@@ -12,7 +13,13 @@ const Biopage = () => {
   const [showInfo, setShowInfo] = useState(false);
   const reset = () => setShowInfo(false);
   const { bio } = state;
-  if (bio?.person?.name) {
+  if (state.isLoading) {
+    return (
+      <div className="bio__loading">
+        <ClipLoader color="rgb(205, 220, 57)" loading={state.isLoading} size={150} />
+      </div>
+    );
+  } if (bio?.person?.name) {
     handleFaviconChange(bio.person.picture);
     return (
       <div className="bio__container">
