@@ -27,7 +27,3 @@ const bioSlice = createSlice({
 });
 
 export default bioSlice.reducer;
-export const selectBio = (state) => state.bio.bio;
-export const selectBioStatus = (state) => state.bio.status;
-export const selectBioError = (state) => state.bio.error;
-export const { getallBio } = bioSlice.actions;
