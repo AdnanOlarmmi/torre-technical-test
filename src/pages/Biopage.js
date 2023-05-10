@@ -19,7 +19,20 @@ const Biopage = () => {
         <ClipLoader color="rgb(205, 220, 57)" loading={state.isLoading} size={150} />
       </div>
     );
-  } if (bio?.code) {
+  } if (state.status === 'failed') {
+    return (
+      <div className="bio__default failed">
+        <span className="material-symbols-outlined">
+          warning
+        </span>
+        <br />
+        <p>
+          Kindly check your internet connection and try again 🤗.
+        </p>
+      </div>
+    );
+  }
+  if (bio?.code) {
     return (
       <div className="bio__default">
         {bio.message}

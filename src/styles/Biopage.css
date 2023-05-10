@@ -119,6 +119,15 @@
   text-align: center;
 }
 
+.bio__default.failed {
+  color: #f00;
+  flex-direction: column;
+}
+
+.bio__default.failed span {
+  font-size: 3rem;
+}
+
 .bio__loading {
   display: flex;
   justify-content: center;
