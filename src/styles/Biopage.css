@@ -105,3 +105,14 @@
   font-weight: 400;
   text-transform: capitalize;
 }
+
+.bio__default {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}

@@ -37,7 +37,12 @@ const Biopage = () => {
         </section>
       </div>
     );
-  } return <p />;
+  } return (
+    <div className="bio__default">
+      Welcome to Torre Bio!
+      Kindly enter a username in the search bar above to view a user&apos;s bio, among others.
+    </div>
+  );
 };
 
 export default Biopage;
