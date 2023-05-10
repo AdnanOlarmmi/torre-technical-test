@@ -72,7 +72,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```
-  git clone https://github.com/AdnanOlarmmi/Climate-App.git
+  git clone https://github.com/AdnanOlarmmi/torre-technical-test.git
 ```
 
 - Navigate to the location of the folder in your machine:
