@@ -6,13 +6,15 @@ import '../styles/Header.css';
 const Header = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
   const state = useSelector((state) => state);
   const { status } = state;
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === 'idle' && formSubmitted) {
       dispatch(getUserBio(username));
+      setFormSubmitted(false);
     }
-  }, [status, dispatch, username]);
+  }, [status, formSubmitted, dispatch, username]);
   const searchRef = useRef(null);
   const formRef = useRef(null);
   const searchIconRef = useRef(null);
@@ -41,6 +43,7 @@ const Header = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getUserBio(username));
+    setFormSubmitted(true);
     setUsername('');
     setSearchActive(false);
     searchIconRef.current.classList.remove('hide');
