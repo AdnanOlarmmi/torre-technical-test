@@ -79,7 +79,6 @@ const Header = () => {
         </button>
         <span className="header__signin btn--white--pointer">SIGN IN</span>
       </div>
-
     </header>
   );
 };
