@@ -26,6 +26,10 @@ const skillsArranged = (props) => {
     skills[proficiency] = strengths.filter((strength) => strength.proficiency === proficiency);
   });
 
+  Object.values(skills).forEach((skillGroup) => {
+    skillGroup.sort((a, b) => b.weight - a.weight);
+  });
+
   return (
     <div>
       {Object.keys(skills).map((proficiency) => {

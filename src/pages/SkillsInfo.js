@@ -58,7 +58,7 @@ SkillsInfo.propTypes = {
     proficiency: PropTypes.string.isRequired,
     weight: PropTypes.number.isRequired,
     recommendations: PropTypes.number.isRequired,
-  }).isRequired,
+  }),
   reset: PropTypes.func.isRequired,
 };
 
