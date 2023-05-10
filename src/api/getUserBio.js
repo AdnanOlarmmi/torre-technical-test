@@ -6,7 +6,7 @@ const getUserBio = createAsyncThunk('bio/fetchBio', async (username) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    return error.message;
+    throw new Error('Network Error');
   }
 });
 

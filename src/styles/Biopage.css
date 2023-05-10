@@ -111,10 +111,12 @@
   font-weight: 400;
   color: #fff;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem;
   height: 80vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .bio__loading {

@@ -19,6 +19,14 @@ const Biopage = () => {
         <ClipLoader color="rgb(205, 220, 57)" loading={state.isLoading} size={150} />
       </div>
     );
+  } if (bio?.code) {
+    return (
+      <div className="bio__default">
+        {bio.message}
+        <br />
+        Kindly Input a valid Username 🤗.
+      </div>
+    );
   } if (bio?.person?.name) {
     handleFaviconChange(bio.person.picture);
     return (
